@@ -1,0 +1,26 @@
+docker常用命令:
+1.docker info 查看docker安装和配置信息.
+2.docker pull repo:tag   下载一个镜像,repo为镜像名,tag为镜像标签
+3.docker help 查看docker帮助信息
+4.docker logs containerid 查看容器当前状态
+5.docker stop containerid 停止容器
+6.docker restart containerid 重启该容器
+7.docker stop cid docker rm cid  容器必须先停止才能删除
+8.docker commit cid ctag 将容器的状态保存为镜像
+9.docker images 显示镜像
+10.docker search images-name 查找镜像
+11.docker history image-name查看镜像的历史版本
+12.docker push repo:tag  上传一个镜像
+
+Dockerfile命令语法
+1.语法命令 INSTRUCTION argument 指令不区分大小写,但命名约定为全部大写
+2.所有的Dockerfile都是以FROM开始的, FROM <image name> 例如:FROM ubuntu
+3.MANITANER:设置该镜像的作者,例如 MAINTAINER <author name>
+4.RUN:在shell或者exec的环境下执行的命令.RUN指令会在新创建的镜像上添加新的层面,RUN <command>
+5.ADD:复制文件指令, ADD <source>  <dist>,dist是容器内的路径,source是url或者文件.
+6.CMD:提供了容器默认的执行命令。 Dockerfile只允许使用一次CMD指令。 使用多个CMD会抵消之前所有的指令，只有最后一个指令生效。 CMD有三种形式：
+CMD ["executable","param1","param2"]
+CMD ["param1","param2"]
+CMD command param1 param2
+7.EXPOSE:指定容器在运行时监听的端口. EXPOSE <port>
+8.ENTRYPOINT:配置给容器一个可执行的命令，这意味着在每次使用镜像创建容器时一个特定的应用程序可以被设置为默认程序。同时也意味着该镜像每次被调用时仅能运行指定的应用。类似于CMD，Docker只允许一个ENTRYPOINT，多个ENTRYPOINT会抵消之前所有的指令，只执行最后的ENTRYPOINT指令,方式同CMD
