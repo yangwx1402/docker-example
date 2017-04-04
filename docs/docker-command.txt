@@ -15,7 +15,7 @@ docker常用命令:
 Dockerfile命令语法
 1.语法命令 INSTRUCTION argument 指令不区分大小写,但命名约定为全部大写
 2.所有的Dockerfile都是以FROM开始的, FROM <image name> 例如:FROM ubuntu
-3.MANITANER:设置该镜像的作者,例如 MAINTAINER <author name>
+3.MAINTAINER:设置该镜像的作者,例如 MAINTAINER <author name>
 4.RUN:在shell或者exec的环境下执行的命令.RUN指令会在新创建的镜像上添加新的层面,RUN <command>
 5.ADD:复制文件指令, ADD <source>  <dist>,dist是容器内的路径,source是url或者文件.
 6.CMD:提供了容器默认的执行命令。 Dockerfile只允许使用一次CMD指令。 使用多个CMD会抵消之前所有的指令，只有最后一个指令生效。 CMD有三种形式：
