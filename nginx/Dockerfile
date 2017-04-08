@@ -1,0 +1,4 @@
+FROM nginx
+MAINTAINER yangwx1402
+
+
